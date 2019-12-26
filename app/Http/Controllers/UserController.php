@@ -35,7 +35,7 @@ class UserController extends Controller
                     'status'    => 'error',
                     'code'      => 404,
                     'message'   => 'El usuario no se ha creado',
-                    'erros'     => $validate->errors()
+                    'error'     => $validate->errors()
                 );
 
             }else{
@@ -48,9 +48,9 @@ class UserController extends Controller
                 $user = new User();
                 $user->name = $params_array['name'];
                 $user->surname = $params_array['surname'];
+                $user->role = 'ROLE_USER';
                 $user->email = $params_array['email'];
                 $user->password = $pwd;
-                $user->role = 'ROLE_USER';
 
                 //Guardar el usuario
                 $user->save();
@@ -117,13 +117,16 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
+        //Comprobar que el usuario este identificado
+        $token  = $request->header('authorization');
+        $jwtAuth = new \JwtAuth();
+        $checkToken = $jwtAuth->checkToken($token);
+
         //Recoger datos por POST
         $json = request()->input('json', null);
         $params_array = json_decode($json, true);
 
         if($checkToken && !empty($params_array)){
-            //ACTUALIZAR DATOS USUARIO
-
             //Sacar usuario identificado
             $user = $jwtAuth->checkToken($token, true);
 

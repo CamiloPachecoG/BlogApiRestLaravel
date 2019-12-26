@@ -33,12 +33,14 @@ class JwtAuth{
         if($signup){
 
             $token = array(
-                'sub'      => $user->id,
-                'email'    => $user->email,
-                'name'     => $user->name,
-                'surname'  => $user->surname,
-                'iat'      => time(),
-                'exp'      => time() + (7 * 24 * 60 * 60)
+                'sub'           => $user->id,
+                'email'         => $user->email,
+                'name'          => $user->name,
+                'surname'       => $user->surname,
+                'description'   => $user->description,
+                'image'         => $user->image,
+                'iat'           => time(),
+                'exp'           => time() + (7 * 24 * 60 * 60)
             );
 
             $jwt = JWT::encode($token, $this->key, 'HS256');

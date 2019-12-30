@@ -45,7 +45,8 @@ class PostController extends Controller
 
     public function show($id){
 
-        $post = Post::find($id)->load('category');
+        $post = Post::find($id)->load('category')
+                               ->load('user');
 
         if(is_object($post)){
 
@@ -276,44 +277,23 @@ class PostController extends Controller
 
     public function getPostsByCategory($id){
 
-        $post = Post::find($id);
-
-        if($post){
-            $posts = Post::where('category_id', $id)->get();
+        $posts = Post::where('category_id', $id)->get();
 
             return response()->json([
                 'status' => 'success',
                 'posts'  => $posts
             ], 200);
-
-        }else{
-
-            return response()->json([
-                'status'    => 'error',
-                'message'   => 'La Categoria no existe'
-            ], 404);
-        }
 
     }
     
     public function getPostsByUser($id){
 
-        $post = Post::find($id);
-
-        if($post){
-            $posts = Post::where('user_id', $id)->get();
+        $posts = Post::where('user_id', $id)->get();
 
             return response()->json([
                 'status' => 'success',
                 'posts'  => $posts
             ], 200);
 
-        }else{
-
-            return response()->json([
-                'status'    => 'error',
-                'message'   => 'El Usuario no existe'
-            ], 404);
-        }
     }
 }

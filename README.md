@@ -1,18 +1,19 @@
-# BlogAngular
+# Blog Laravel + Angular
 
 Proyecto Blog API realizado frontend Angular 8 backend Laravel 6
 
 ## ScreenShots
 
-Inicio
+Register
 
-![Captura de Pantalla 2020-02-08 a la(s) 13 27 55](https://user-images.githubusercontent.com/58574070/74088595-d21e0300-4a76-11ea-8e3e-810c1cb05eb7.png)
+![Captura de Pantalla 2020-02-09 a la(s) 14 22 06](https://user-images.githubusercontent.com/58574070/74106699-a28afb80-4b47-11ea-92ad-f04ceb7e2599.png)
+
+Login
+
+![Captura de Pantalla 2020-02-09 a la(s) 14 24 11](https://user-images.githubusercontent.com/58574070/74106736-d9f9a800-4b47-11ea-9a33-77f533bd296b.png)
 
 Crear Post
 
-![Captura de Pantalla 2020-02-08 a la(s) 13 29 06](https://user-images.githubusercontent.com/58574070/74088610-fc6fc080-4a76-11ea-8f42-50cc80f76c09.png)
+![Captura de Pantalla 2020-02-09 a la(s) 14 32 25](https://user-images.githubusercontent.com/58574070/74106851-006c1300-4b49-11ea-989b-f50d19621ba7.png)
 
-Leer Post
-
-![Captura de Pantalla 2020-02-08 a la(s) 13 32 25](https://user-images.githubusercontent.com/58574070/74088659-743deb00-4a77-11ea-890b-23c7837aa5e7.png)
-
+ETC..
